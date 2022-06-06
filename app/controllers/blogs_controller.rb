@@ -11,6 +11,7 @@ class BlogsController < ApplicationController
 
   def show
     @blog = Blog.find(params[:id])
+    Blog.find(params[:id]).secret ? set_blog : @blog
   end
 
   def new
